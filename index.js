@@ -11,8 +11,11 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cors());
 app.use('/users', Routes);
 
+app.get('/',(req,res)=>{
+    res.send("iugdeug");
+})
 const URL = 'mongodb://user:rmijoessi01@cluster0-shard-00-00.cu5yb.mongodb.net:27017,cluster0-shard-00-01.cu5yb.mongodb.net:27017,cluster0-shard-00-02.cu5yb.mongodb.net:27017/Cluster0?ssl=true&replicaSet=atlas-lmga9w-shard-0&authSource=admin&retryWrites=true&w=majority'
-const PORT = process.env.PORT || '8080'; //2 - get the port from env file, if not available pick 8080
+const PORT = process.env.PORT || '8080'; 
 
 
 mongoose.connect(URL, { useNewUrlParser: true, useUnifiedTopology: true, useFindAndModify: false }).then(() => { 
